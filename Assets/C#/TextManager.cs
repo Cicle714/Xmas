@@ -33,6 +33,7 @@ public class TextManager : MonoBehaviour
         yield return StartCoroutine(Text1());
         yield return StartCoroutine(Text2());
         yield return StartCoroutine(Text3());
+        yield return StartCoroutine(Text4());
     }
 
 
@@ -60,9 +61,9 @@ public class TextManager : MonoBehaviour
         XmasTexts[0].gameObject.SetActive(false);
         Lights[0].SetActive(false);
         Lights[1].SetActive(true);
+        cameraMove.MoveCount = 0;
         cameraMove.StartCoroutine(cameraMove.CameraMove2());
 
-        cameraMove.MoveCount = 0;
     }
     IEnumerator Text2()
     {
@@ -86,8 +87,8 @@ public class TextManager : MonoBehaviour
         XmasTexts[1].gameObject.SetActive(false);
         Lights[1].SetActive(false);
         Lights[0].SetActive(true);
-        cameraMove.StartCoroutine(cameraMove.CameraMove3());
         cameraMove.MoveCount = 0;
+        cameraMove.StartCoroutine(cameraMove.CameraMove3());
         yield return null;
     }
     IEnumerator Text3()
@@ -108,7 +109,9 @@ public class TextManager : MonoBehaviour
             BlackOut.color += new Color(0, 0, 0, Time.deltaTime / 3);
             yield return null;
         }
-
+        XmasTexts[2].gameObject.SetActive(false);
+        cameraMove.MoveCount = 0;
+        cameraMove.StartCoroutine(cameraMove.CameraMove4());
         yield return null;
     }
     IEnumerator Text4()

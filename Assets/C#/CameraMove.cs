@@ -77,11 +77,11 @@ public class CameraMove : MonoBehaviour
     }
     public IEnumerator CameraMove4()
     {
-        cameras[1].gameObject.SetActive(true);
+        cameras[2].gameObject.SetActive(true);
         while (CameraMoveTimes[3] > MoveCount)
         {
             MoveCount += Time.deltaTime;
-            cameras[1].transform.position += new Vector3(0, 0.5f, 0) * Time.deltaTime;
+            cameras[2].transform.position += new Vector3(0, 0.5f, 0) * Time.deltaTime;
 
 
             yield return null;
